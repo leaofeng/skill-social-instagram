@@ -16,6 +16,20 @@ A command-line tool for downloading Instagram images, videos, and Reels. Support
 
 ---
 
+## 更新日志 | Changelog
+
+### 2025-02-25
+- **新增**: 链接验证 - 仅处理 Instagram 链接，其他平台链接会被拒绝
+- **更新**: 文档中添加限制说明
+
+### 2025-02-24
+- **初始化**: 项目创建，基础功能实现
+- **功能**: 支持图片/视频/Reels 下载
+- **功能**: 智能命名格式 {作者}_{日期}_{时间}_{总数}_{序号}.jpg
+- **功能**: 自动写入 EXIF 元数据
+
+---
+
 ## 功能特性 | Features
 
 | 中文 | English |
@@ -24,6 +38,18 @@ A command-line tool for downloading Instagram images, videos, and Reels. Support
 | 智能命名格式：`{作者}_{日期}_{时间}_{总数}_{序号}.jpg` | Smart naming: `{author}_{date}_{time}_{total}_{index}.jpg` |
 | 自动写入 EXIF 元数据 | Automatic EXIF metadata injection |
 | 支持 gallery-dl + yt-dlp 双引擎 | Dual-engine support: gallery-dl + yt-dlp |
+
+---
+
+## ⚠️ 限制 | Limitations
+
+**本工具仅处理 Instagram 链接**，其他平台链接（Twitter/X、Facebook 等）会被拒绝。
+
+**This tool only processes Instagram links.** Links from other platforms (Twitter/X, Facebook, etc.) will be rejected.
+
+支持的链接格式 | Supported URL formats:
+- `https://www.instagram.com/p/xxxxx/` (图片/视频帖子)
+- `https://www.instagram.com/reel/xxxxx/` (Reels 短视频)
 
 ---
 
@@ -89,6 +115,14 @@ The downloaded images contain the following EXIF metadata:
 - `ImageDescription`: Original Instagram URL
 - `UserComment`: Complete JSON metadata (author, likes, etc.)
 - `Artist`: Author username
+
+---
+
+## 安全声明 | Security Notice
+
+⚠️ **删除 GitHub 上任何内容需经作者同意。**
+
+⚠️ **Any deletion of content on GitHub requires the author's consent.**
 
 ---
 
