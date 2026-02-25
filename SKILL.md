@@ -12,6 +12,13 @@
 - 保存到 ~/Downloads/ins/
 - 自动发送到 Telegram @xiaoxiaasbot
 
+## ⚠️ 限制
+**本工具仅处理 Instagram 链接**，其他平台链接（Twitter/X、Facebook 等）会被拒绝。
+
+支持的链接格式：
+- `https://www.instagram.com/p/xxxxx/` (图片/视频帖子)
+- `https://www.instagram.com/reel/xxxxx/` (Reels 短视频)
+
 ## 使用方式
 
 ### 方式1：直接发送链接
