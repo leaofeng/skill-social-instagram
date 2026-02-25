@@ -2,6 +2,7 @@
 # Instagram Downloader Skill - Universal Version (Images + Videos)
 # 命名规则: {下载ID}_{总数}_{序号}
 # 元数据: 视频嵌入文件，图片写入EXIF
+# 注意: 本工具仅处理 Instagram 链接
 
 URL="$1"
 OUTPUT_DIR="/Users/leaof/Downloads/ins"
@@ -10,6 +11,18 @@ FFMPEG="$HOME/.openclaw/ffmpeg"
 FFPROBE="$HOME/.openclaw/ffprobe"
 START_TIME=$(date +%s)
 START_TIME_FMT=$(date +"%H:%M:%S")
+
+# 验证是否为 Instagram 链接
+if [[ ! "$URL" =~ instagram\.com ]]; then
+    echo "❌ 错误: 本工具仅支持 Instagram 链接"
+    echo ""
+    echo "支持的链接格式:"
+    echo "  • https://www.instagram.com/p/xxxxx/"
+    echo "  • https://www.instagram.com/reel/xxxxx/"
+    echo ""
+    echo "当前链接: $URL"
+    exit 1
+fi
 
 # 清理函数 - 下载完成后删除临时文件
 cleanup_temp() {
